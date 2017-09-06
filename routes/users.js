@@ -10,7 +10,6 @@ router.use('/', function(req, res, next) {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	console.log(req.user.displayName);
   res.render('users', {user: {name: req.user.displayName,
   					   image: req.user.image}});
 });
