@@ -22,4 +22,13 @@ router.route('/twitter/callback')
 router.route('/twitter')
 	.get(passport.authenticate('twitter'));
 
+router.route('/facebook/callback')
+	.get(passport.authenticate('facebook', {
+		successRedirect: '/users/',
+		failureRedirect:'/error/'
+}));
+
+router.route('/facebook')
+	.get(passport.authenticate('facebook'));
+
 module.exports = router;
